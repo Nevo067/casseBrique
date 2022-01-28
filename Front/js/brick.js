@@ -1,3 +1,4 @@
+import ball from './classJs/GameObject'
 let cv = this.document.getElementById("sheet");
 
 let context;
@@ -8,7 +9,7 @@ if(cv.getContext)
      context = cv.getContext("2d");
      //drawRebond(context,500,450);
      //drawBall(context,500,400)
-     window.requestAnimationFrame(drawImage("../image/11.jpg",context);)
+     window.requestAnimationFrame(drawImage("../image/11.jpg",context));
      //drawImage("../image/11.jpg",context);
      
      
