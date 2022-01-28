@@ -118,3 +118,4 @@ function drawBall(ctx,positionX,positionY)
     ctx.fill()
     
 }
+export default {degreToRadian}
