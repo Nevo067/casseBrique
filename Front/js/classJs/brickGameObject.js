@@ -1,4 +1,4 @@
-class Brick
+export default class Brick
 {
     x = 0;
     y = 0;

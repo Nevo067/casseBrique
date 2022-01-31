@@ -1,9 +1,9 @@
-import ball from './classJs/GameObject'
-let cv = this.document.getElementById("sheet");
+
+let cv = document.getElementById("sheet");
 
 let context;
 
-
+/*
 if(cv.getContext)
 {
      context = cv.getContext("2d");
@@ -18,6 +18,7 @@ else
 {
 
 }
+*/
 /**Draw a rectangle */
 function drawRect(ctx)
 {
