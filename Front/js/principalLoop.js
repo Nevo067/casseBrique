@@ -1,7 +1,7 @@
 import Ball from "./classJs/GameObject.js";
 import Player from "./classJs/Player.js";
 import Brick from "./classJs/brickGameObject.js"
-import brick from "./brick.js";
+
 
 
 
@@ -9,7 +9,7 @@ import brick from "./brick.js";
 let canvas = document.getElementById("sheet");
 let context = canvas.getContext("2d");
 
-let ball = new Ball(0,0);
+let ball = new Ball(0,0,10);
 let player = new Player(500,400,200,10,10);
 let brickGrid = [];
 let xBrickVal = [];
@@ -17,6 +17,7 @@ let req;
 
 function draw()
 {
+    let brickDestroyed;
     //erase canvas
     context.clearRect(0,0,canvas.width,canvas.height);
     //brick
@@ -40,14 +41,27 @@ function draw()
     ball.y += ball.vy;
     
     ball.hitBox(player.x,player.y,player.sizeX,player.sizeY);
+
     
+
+    brickDestroyed = ball.brickHitbox(xBrickVal,brickGrid,20);
+    console.log
+    if(brickDestroyed != null)
+    {
+        console.log("detruit");
+        let y = brickDestroyed[1];
+        let x = brickDestroyed[0];
+        console.log(x)
+        brickGrid[x].splice(y,1);
+    }
+
     window.requestAnimationFrame(draw)
 
 }
 
 function initLineBrick(sizeX,sizeY,step,maxwidth,y)
 {
-    let lineBrick = [];
+    let lineBrick = new Array();
     
     let nbBrick=(maxwidth/((step+sizeX))-1);
     
@@ -111,7 +125,7 @@ function inputPlayer()
     });
 }
 
-initGrid(50,20,10,50,canvas.width,3);
+initGrid(20,20,10,50,canvas.width,5);
 console.log(brickGrid);
 inputPlayer();
 draw()
