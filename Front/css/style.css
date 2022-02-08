@@ -1,3 +1,23 @@
 .canvas{
-    border: 1px solid black;
+    
+    border: 1px solid #000000;
+    position: absolute;
+    width: 480;
+     
+    
+}
+.flex_container
+{
+   
+   display: flex ;
+}
+.flex_item
+{
+    height: 25px;
+    flex: 1;
+    
+}
+.flex_item_canvas
+{
+    flex: 1;
 }
