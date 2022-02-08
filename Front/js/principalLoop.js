@@ -1,6 +1,7 @@
 import Ball from "./classJs/GameObject.js";
 import Player from "./classJs/Player.js";
 import Brick from "./classJs/brickGameObject.js"
+import GameManager from "./classJs/GameManager.js"
 
 
 
@@ -11,6 +12,8 @@ let context = canvas.getContext("2d");
 
 let ball = new Ball(0,0,10);
 let player = new Player(500,400,200,10,10);
+let gameManager = new GameManager();
+
 let brickGrid = [];
 let xBrickVal = [];
 let req;
@@ -53,6 +56,7 @@ function draw()
         let x = brickDestroyed[0];
         console.log(x)
         brickGrid[x].splice(y,1);
+        gameManager.addPoint(1);
     }
 
     window.requestAnimationFrame(draw)
