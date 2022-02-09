@@ -65,7 +65,7 @@ function draw()
     window.requestAnimationFrame(draw)
 
 }
-
+//Grid Method
 function initLineBrick(sizeX,sizeY,step,maxwidth,y)
 {
     let lineBrick = new Array();
@@ -131,15 +131,31 @@ function inputPlayer()
         }
     });
 }
-function updateScore(id)
+
+
+//update text Node
+function updateTextNode(id,text)
 {
-    document.getElementById(id).innerText = ("score:"+gameManager.point);
-    console.log("score:"+gameManager.point);
-   
+    document.getElementById(id).innerText = text;
+}
+function updateScore()
+{
+    let text = ("score"+gameManager.point);
+    updateTextNode("score",text)
    /*
    let nodeText = document.createTextNode(("score:"+gameManager.point));
    score.replaceChild(score.textContent,nodeText);
    */
+}
+function updateVictory()
+{
+    let text = ("victory;"+gameManager.point);
+    updateTextNode("victory",text);
+}
+function updateGameOver()
+{
+    let text = ("gameOver:"+gameManager.numberGameOver);
+    updateTextNode("gameOver",text);
 }
 
 initGrid(20,20,10,50,canvas.width,5);
