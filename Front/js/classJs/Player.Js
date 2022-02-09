@@ -38,7 +38,8 @@ export default class Player{
      */
     movePlayerWithLimit(x,limitX)
     {
-        if(!(this.x + x > limitX || this.x + x < 0))
+        //Todo improve
+        if(!((this.x + x*this.speed) > limitX || (this.x + x*this.speed) < 0))
         {
             this.movePlayer(x,limitX)
         }

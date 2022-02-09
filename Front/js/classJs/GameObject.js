@@ -17,8 +17,8 @@ export default class Ball
         this.x = x;
         this.y = y;
         this.rayon = rayon
-        this.vx = 2;
-        this.vy = 5;
+        this.vx = 1;
+        this.vy = 2;
     }
     /**
      * Draw a ball on the canvas
@@ -66,10 +66,7 @@ export default class Ball
                     
                     if(this.hitBox(bloc.x,bloc.y,bloc.sizeX,bloc.sizeY))
                     {
-                        console.log(t);
-                        console.log("touché");
                         tab = [t,t2]
-                        console.log(tab);
                         return tab;
                     }
                     t2++;

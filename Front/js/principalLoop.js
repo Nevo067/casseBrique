@@ -11,7 +11,7 @@ let canvas = document.getElementById("sheet");
 let context = canvas.getContext("2d");
 
 let ball = new Ball(0,0,10);
-let player = new Player(10,600,80,10,10);
+let player = new Player(10,600,80,10,25);
 let gameManager = new GameManager();
 
 
