@@ -14,6 +14,8 @@ let ball = new Ball(0,0,10);
 let player = new Player(500,400,200,10,10);
 let gameManager = new GameManager();
 
+
+
 let brickGrid = [];
 let xBrickVal = [];
 let req;
@@ -57,6 +59,7 @@ function draw()
         console.log(x)
         brickGrid[x].splice(y,1);
         gameManager.addPoint(1);
+        updateScore("score");
     }
 
     window.requestAnimationFrame(draw)
@@ -127,6 +130,16 @@ function inputPlayer()
                 break;
         }
     });
+}
+function updateScore(id)
+{
+    document.getElementById(id).innerText = ("score:"+gameManager.point);
+    console.log("score:"+gameManager.point);
+   
+   /*
+   let nodeText = document.createTextNode(("score:"+gameManager.point));
+   score.replaceChild(score.textContent,nodeText);
+   */
 }
 
 initGrid(20,20,10,50,canvas.width,5);
