@@ -24,12 +24,14 @@ function draw()
 {
     let brickDestroyed;
     //erase canvas
-    context.clearRect(0,0,canvas.width,canvas.height);
+    
+    //eraseGrillBrick(context);
     //brick
     drawGrillBrick(context);
     // player
     player.drawPlayer(context);
     //ball
+    ball.eraseBall(context)
     ball.drawBall(context);
 
 
@@ -57,11 +59,12 @@ function draw()
         let y = brickDestroyed[1];
         let x = brickDestroyed[0];
         console.log(x)
+        brickGrid[x][y].eraseBrick(context);
         brickGrid[x].splice(y,1);
         gameManager.addPoint(1);
         updateScore("score");
     }
-
+    
     window.requestAnimationFrame(draw)
 
 }
@@ -96,6 +99,14 @@ function drawGrillBrick(ctx)
     brickGrid.forEach(lineBrick=>{
         lineBrick.forEach(brickVal =>{
             brickVal.drawBrick(ctx);
+        })
+    })
+}
+function eraseGrillBrick(ctx)
+{
+    brickGrid.forEach(lineBrick=>{
+        lineBrick.forEach(brickVal =>{
+            brickVal.eraseBrick(ctx);
         })
     })
 }

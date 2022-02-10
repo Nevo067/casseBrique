@@ -14,7 +14,14 @@ export default class Brick
     }
     drawBrick(ctx)
     {
+        
         ctx.rect(this.x,this.y,this.sizeX,this.sizeY);
         ctx.fill();
+        
+    }
+    eraseBrick(ctx)
+    {
+        
+        ctx.clearRect(this.x,this.y,this.sizeX,this.sizeY);
     }
 }

@@ -20,6 +20,7 @@ export default class Player{
      */
     drawPlayer(ctx)
     {
+        
         ctx.rect(this.x,this.y,this.sizeX,this.sizeY);
         ctx.fill(); 
     }

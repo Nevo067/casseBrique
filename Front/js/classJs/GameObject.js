@@ -32,6 +32,10 @@ export default class Ball
         ctx.fill();
         
     }
+    eraseBall(ctx)
+    {
+        ctx.clearRect(this.x - this.rayon - 3, this.y - this.rayon - 3, this.rayon * 2 + 5, this.rayon * 2 + 5);
+    }
     hitBox(RectX,RectY,sizeX,sizeY)
     {
         let perimetreYP = (this.y + this.rayon)
