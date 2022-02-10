@@ -28,7 +28,8 @@ function draw()
     //eraseGrillBrick(context);
     //brick
     drawGrillBrick(context);
-    // player
+    //player
+    player.erasePlayer(context,canvas.width);
     player.drawPlayer(context);
     //ball
     ball.eraseBall(context)

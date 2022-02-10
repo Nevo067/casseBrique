@@ -24,6 +24,12 @@ export default class Player{
         ctx.rect(this.x,this.y,this.sizeX,this.sizeY);
         ctx.fill(); 
     }
+    erasePlayer(ctx,maxwidth)
+    {
+        ctx.fillStyle = 'rgba(255,255,255,0.1)';
+        ctx.fillRect(0,this.y,maxwidth,this.sizeY);
+        ctx.fillStyle = 'rgba(0,0,0,1)';
+    }
     /**
      * move player
      * @param {move's vector on x axis} x 
