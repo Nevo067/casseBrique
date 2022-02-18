@@ -1,5 +1,5 @@
 import Ball from "./classJs/GameObject.js";
-import Player from "./classJs/Player.js";
+import Player from "./classJs/Player.Js";
 import Brick from "./classJs/brickGameObject.js"
 import GameManager from "./classJs/GameManager.js"
 
